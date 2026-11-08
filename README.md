@@ -59,6 +59,7 @@
 
 <p align="center">
   <a href="#residents">常驻席位</a> ·
+  <a href="#free-special">岩鸢游泳部</a> ·
   <a href="#quotes">台词留声机</a> ·
   <a href="#music">月下点唱机</a> ·
   <a href="#screenings">放映目录</a>
@@ -100,6 +101,31 @@
 </table>
 
 <p align="center"><sub>席位与随身物是这个小站的同人设定；角色介绍与下方短评为原创。</sub></p>
+
+<a id="free-special"></a>
+
+### 🏊 特别放映 · 《Free!》第一季
+
+<p align="center"><sub>岩鳶高校水泳部 · 2013 · 第一季官方角色图</sub></p>
+
+<table>
+<tr>
+<td width="50%" align="center" valign="top">
+  <a href="https://1st.iwatobi-sc.com/character/nagisa/"><img src="https://1st.iwatobi-sc.com/sp/images/character/nagisa.jpg" alt="《Free!》第一季官网角色图：叶月渚" width="100%" /></a>
+  <h4>🐧 叶月渚 · 葉月 渚</h4>
+  <p><sub>岩鸢高中一年级 · 蛙泳 · CV 代永翼</sub></p>
+  <p>金发、红眼睛，笑起来像夏天。因为一直想再和遥一起游泳，他考进了遥所在的高中。</p>
+</td>
+<td width="50%" align="center" valign="top">
+  <a href="https://1st.iwatobi-sc.com/character/haruka/"><img src="https://1st.iwatobi-sc.com/sp/images/character/haruka.jpg" alt="《Free!》第一季官网角色图：七濑遥" width="100%" /></a>
+  <h4>🌊 七濑遥 · 七瀬 遙</h4>
+  <p><sub>岩鸢高中二年级 · 自由泳 · CV 岛崎信长</sub></p>
+  <p>黑发、蓝眼睛，平时话很少。碰到水时那份认真的样子，最容易让人记住他。</p>
+</td>
+</tr>
+</table>
+
+<p align="center"><sub>角色图来自 <a href="https://1st.iwatobi-sc.com/sp/character/">《Free!》第一季官网</a> · <a href="https://www.youtube.com/watch?v=JNU1ehnCVP8">观看京都动画官方 PV</a> · <a href="#music">去点唱机听第一季音乐</a></sub></p>
 
 <a id="quotes"></a>
 
@@ -200,7 +226,18 @@
 </tr>
 </table>
 
-<p align="center"><sub>点击曲目链接前往 YouTube 收听 · 听感文字为原创，不是歌词。</sub></p>
+#### 💿 夏夜加映 · 岩鸢游泳部精选
+
+- **08 · Rage on — OLDCODEX** · 第一季 OP  
+  吉他一响就有站上出发台的紧张感。[Lantis 官方 MV](https://www.youtube.com/watch?v=P8JV2xnyJ9Q)
+- **09 · SPLASH FREE — STYLE FIVE** · 第一季 ED  
+  五位主角声优一起唱，节拍俏皮，适合给训练后的夏夜加点热闹。[动画官网试听](https://1st.iwatobi-sc.com/sp/product/cd/ed/)
+- **10 · A boy in the water — 加藤达也** · 第一季 BGM  
+  想让耳机里只剩配乐时，听这首。它是原声专辑第一碟的第 2 轨。[Apple Music 原声专辑](https://music.apple.com/gd/album/tv%E3%82%A2%E3%83%8B%E3%83%A1-free-%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF-ever-blue-sounds/1584268225)
+- **11 · EVER BLUE — STYLE FIVE** · 第一季特别 ED  
+  更适合留到最后一首。听着会想起接力的那一刻，和几个朋友游过同一片水。[Apple Music 原声专辑 · 第二碟第 26 轨](https://music.apple.com/gd/album/tv%E3%82%A2%E3%83%8B%E3%83%A1-free-%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF-ever-blue-sounds/1584268225)
+
+<p align="center"><sub>点击各曲目旁的链接收听 · 听感文字为原创</sub></p>
 
 <a id="screenings"></a>
 
@@ -244,7 +281,7 @@
   <sub>这里有写到一半的代码，也有舍不得按下停止的片尾曲。</sub><br /><br />
   <sub>また、好きな世界で会おう。</sub><br />
   <sub>下次，在喜欢的世界里再见。</sub><br /><br />
-  <sub>非官方同人角落 · 插图为 AI 生成的 Q 版同人演绎</sub>
+  <sub>非官方同人角落 · 四人合影为 Q 版同人图 · 《Free!》角色图来自第一季官网</sub>
 </p>
 
 <!-- moonlit-anime-club:end -->
