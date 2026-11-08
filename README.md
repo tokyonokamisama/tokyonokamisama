@@ -49,17 +49,16 @@
 
 <p align="center">
   <b>把喜欢的人物，留在同一片星空下。</b><br />
-  <sub>青春的心跳 · 少年的秘密 · 月夜的怪谈 · 耳机里的世界</sub>
+  <sub>青春的心跳 · 没说完的话 · 耳机里的世界</sub>
 </p>
 
 <p align="center">
-  <img src="./assets/moonlit-anime-club-v2.jpg" alt="Q 版同人合影：安昙小太郎、市川京太郎、夏尔·凡多姆海威、花子君，在月夜樱花下共享露天放映室" width="100%" />
-  <br /><sub>今夜の同席者 / 小太郎 · 京太郎 · 夏尔 · 花子君</sub>
+  <img src="./assets/moonlit-kotaro-kyotaro.jpg" alt="安昙小太郎和市川京太郎在月夜樱花下看电影的 Q 版双人同人图" width="100%" />
+  <br /><sub>今夜の同席者 / 小太郎 · 京太郎</sub>
 </p>
 
 <p align="center">
   <a href="#residents">常驻席位</a> ·
-  <a href="#free-special">岩鸢游泳部</a> ·
   <a href="#quotes">台词留声机</a> ·
   <a href="#music">月下点唱机</a> ·
   <a href="#screenings">放映目录</a>
@@ -67,75 +66,55 @@
 
 <a id="residents"></a>
 
-### 🪑 常驻席位 · 小さな住人たち
+### 🪑 常驻席位 · 小太郎与京太郎
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" align="center" valign="top">
+<a href="https://tsukigakirei.jp/charactor/"><img src="./assets/kotaro-portrait.png" alt="《月色真美》官网的安昙小太郎角色头像" width="120" /></a>
 <h3>🌙 安昙小太郎</h3>
-<p><b>安曇 小太郎 · 月色真美</b><br /><sub>月がきれい / Tsuki ga Kirei</sub></p>
-<p>文学少年，把心事藏在书页和迟迟没有发出的消息里。安静的日常，也能装下很认真的喜欢。</p>
-<p><b>座位：</b>窗边，有月光的那一席。<br /><b>随身物：</b>文库本、笔记本、一点点勇气。</p>
+<p><b>安曇 小太郎 ·《月色真美》</b><br /><sub>月がきれい · CV 千叶翔也</sub></p>
+<p>喜欢读书、想写小说的少年。黑发整齐，神情有点拘谨。和茜面对面时，常常没法像在纸上那样把心事说得顺畅。</p>
 </td>
-<td width="50%" valign="top">
+<td width="50%" align="center" valign="top">
+<a href="https://bokuyaba-anime.com/character/detail/?chara=01"><img src="./assets/kyotaro-portrait.png" alt="《我心里危险的东西》官网的市川京太郎表情设定图" width="120" /></a>
 <h3>📚 市川京太郎</h3>
-<p><b>市川 京太郎 · 我心里危险的东西</b><br /><sub>僕の心のヤバイやつ / The Dangers in My Heart</sub></p>
-<p>刘海后面藏着热闹的内心剧场。嘴上别扭，心里却一点点学会关心别人，也学会承认自己的心意。</p>
-<p><b>座位：</b>图书室最熟悉的角落。<br /><b>随身物：</b>书、耳机、正在解除的心防。</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<h3>🫖 夏尔·凡多姆海威</h3>
-<p><b>シエル・ファントムハイヴ · 黑执事</b><br /><sub>黒執事 / Black Butler</sub></p>
-<p>蓝灰色的发、眼罩、层层叠叠的领结。小小的贵族少年，漂亮又骄傲；精致的茶杯后面，还藏着不愿轻易示人的心事。</p>
-<p><b>座位：</b>茶具最齐全的丝绒靠垫。<br /><b>随身物：</b>红茶、棋子，以及留给甜点的位置。</p>
-</td>
-<td width="50%" valign="top">
-<h3>🍩 花子君</h3>
-<p><b>花子くん · 地缚少年花子君</b><br /><sub>地縛少年花子くん / Toilet-bound Hanako-kun</sub></p>
-<p>旧式帽子、琥珀色的眼睛、脸颊上的小小封印。笑起来有点狡黠，靠近时又让人心软；可爱的怪谈少年，也有自己的秘密。</p>
-<p><b>座位：</b>灯笼旁，白杖代也能飘着看。<br /><b>随身物：</b>甜甜圈、一点恶作剧、没有说完的故事。</p>
+<p><b>市川 京太郎 ·《我心里危险的东西》</b><br /><sub>僕の心のヤバイやつ · CV 堀江瞬</sub></p>
+<p>单边刘海遮住眼睛，脸上稍微一红就能看出他的心思。内心独白热闹得很，真正开口时却经常比自己想象中温柔。</p>
 </td>
 </tr>
 </table>
 
-<p align="center"><sub>席位与随身物是这个小站的同人设定；角色介绍与下方短评为原创。</sub></p>
-
-<a id="free-special"></a>
-
-### 🏊 特别放映 · 《Free!》第一季
-
-<p align="center"><sub>岩鳶高校水泳部 · 2013 · 第一季官方角色图</sub></p>
+#### 🎬 动画里的样子
 
 <table>
 <tr>
 <td width="50%" align="center" valign="top">
-  <a href="https://1st.iwatobi-sc.com/character/nagisa/"><img src="https://1st.iwatobi-sc.com/sp/images/character/nagisa.jpg" alt="《Free!》第一季官网角色图：叶月渚" width="100%" /></a>
-  <h4>🐧 叶月渚 · 葉月 渚</h4>
-  <p><sub>岩鸢高中一年级 · 蛙泳 · CV 代永翼</sub></p>
-  <p>金发、红眼睛，笑起来像夏天。因为一直想再和遥一起游泳，他考进了遥所在的高中。</p>
+<a href="https://tsukigakirei.jp/story/03.html"><img src="./assets/kotaro-still.jpg" alt="《月色真美》第 3 集剧照，小太郎和茜坐在神社里说话" width="100%" /></a>
+<p><sub>《月色真美》第 3 集 · 神社里的小太郎</sub></p>
 </td>
 <td width="50%" align="center" valign="top">
-  <a href="https://1st.iwatobi-sc.com/character/haruka/"><img src="https://1st.iwatobi-sc.com/sp/images/character/haruka.jpg" alt="《Free!》第一季官网角色图：七濑遥" width="100%" /></a>
-  <h4>🌊 七濑遥 · 七瀬 遙</h4>
-  <p><sub>岩鸢高中二年级 · 自由泳 · CV 岛崎信长</sub></p>
-  <p>黑发、蓝眼睛，平时话很少。碰到水时那份认真的样子，最容易让人记住他。</p>
+<a href="https://bokuyaba-anime.com/story/detail/?id=1001184"><img src="./assets/kyotaro-still.jpg" alt="《我心里危险的东西》第 3 集官方预告画面，穿着运动服的京太郎" width="100%" /></a>
+<p><sub>《我心里危险的东西》第 3 集 · 官方预告里的京太郎</sub></p>
 </td>
 </tr>
 </table>
-
-<p align="center"><sub>角色图来自 <a href="https://1st.iwatobi-sc.com/sp/character/">《Free!》第一季官网</a> · <a href="https://www.youtube.com/watch?v=JNU1ehnCVP8">观看京都动画官方 PV</a> · <a href="#music">去点唱机听第一季音乐</a></sub></p>
 
 <a id="quotes"></a>
 
 ### 📻 台词留声机 · ことばの余韻
 
+> **「付き合って」**  
+> 和我交往吧。  
+> —— 安昙小太郎 ·《月色真美》第 3 集
+
+**放映室手记**　茜先抬头说月亮好看，小太郎最后只说了这几个字。那个停顿让一句简单的告白有了分量。
+
 > **「僕は…山田が好きなんだ」**  
 > 我……喜欢山田。  
-> —— 市川京太郎 ·《我心里危险的东西》
+> —— 市川京太郎 ·《我心里危险的东西》第 3 集
 
-**放映室手记：** 有时，成长不是突然变得厉害，而是终于愿意诚实地叫出一种感情的名字。
+**放映室手记**　看到山田在保健室里哭，京太郎才认出自己一直绕着走的那份在意。这句话，他先说给了自己听。
 
 > **「ただの人間には興味ありません。」**  
 > 我对普通的人类没有兴趣。  
@@ -154,7 +133,8 @@
 
 日文为短句摘录，中文为本站译意；「放映室手记」是原创感想，不是角色原话。涉及少量人物心意，未展开关键剧情。
 
-- **我心里危险的东西**：[MOVIE WALKER PRESS 名场面回顾](https://press.moviewalker.jp/news/article/1317151/)
+- **月色真美**　[第 3 集官网](https://tsukigakirei.jp/story/03.html) · [台词场景回顾](https://minnanasi.net/posts/20170429-0016/)
+- **我心里危险的东西**　[第 3 集官网](https://bokuyaba-anime.com/story/detail/?id=1001184) · [MOVIE WALKER PRESS 名场面回顾](https://press.moviewalker.jp/news/article/1317151/)
 - **凉宫春日的忧郁**：[涼宮ハルヒシリーズ大辞典 · 台词资料](https://w.atwiki.jp/haruhi_dictionary/pages/88.html)
 - **钢之炼金术师**：[日文旁白摘录](https://aipophia.jp/wisdom/q/work-manga-hagaren-exchange/)
 
@@ -180,6 +160,10 @@
 《新·福音战士剧场版》主题曲 · [▶ 官方 MV](https://www.youtube.com/watch?v=0Uhh62MUEic)  
 轻盈的电子节拍里藏着告别的重量。像晚风吹过车窗，风景已经向后退去，心里却还留着某个人的轮廓。  
 <sub>留给：不想立刻结束的夜晚。</sub>
+
+> *Can you give me one last kiss?*
+
+[♫ 查看完整歌词 · 歌ネット](https://www.uta-net.com/song/298948/)
 
 <table>
 <tr>
@@ -254,16 +238,6 @@
 </details>
 
 <details>
-<summary>🕯️ 秘密馆 · 红茶、甜甜圈与少年的另一面</summary>
-
-**《黑执事》** — 华丽礼服、英伦宅邸与契约；小小的少年伯爵，背负着沉重的秘密。  
-**《地缚少年花子君》** — 从校园七大不可思议走进怪异世界，可爱的外表与幽暗的故事相互映照。
-
-*夏尔的红茶请先放好。花子君，你不能把所有甜甜圈都拿走。*
-
-</details>
-
-<details>
 <summary>🌌 深夜馆 · 自我、代价与不普通的日常</summary>
 
 **《新世纪福音战士》** — 巨大机体背后，是人对认可的渴望与靠近彼此的困难。  
@@ -281,7 +255,7 @@
   <sub>这里有写到一半的代码，也有舍不得按下停止的片尾曲。</sub><br /><br />
   <sub>また、好きな世界で会おう。</sub><br />
   <sub>下次，在喜欢的世界里再见。</sub><br /><br />
-  <sub>非官方同人角落 · 四人合影为 Q 版同人图 · 《Free!》角色图来自第一季官网</sub>
+  <sub>非官方同人角落 · 双人合影为 Q 版同人图 · 角色图与动画画面取自对应作品的官方资料</sub>
 </p>
 
 <!-- moonlit-anime-club:end -->
