@@ -49,17 +49,18 @@
 
 <p align="center">
   <b>把喜欢的人物，留在同一片星空下。</b><br />
-  <sub>青春的心跳 · 温柔的异闻 · 笨拙的勇气 · 偶尔拯救世界</sub>
+  <sub>青春的心跳 · 少年的秘密 · 月夜的怪谈 · 耳机里的世界</sub>
 </p>
 
 <p align="center">
-  <img src="./assets/moonlit-anime-club.jpg" alt="Q 版同人合影：安昙小太郎、市川京太郎、夏目贵志与猫咪老师、碇真嗣，在月夜樱花下共享露天放映室" width="100%" />
-  <br /><sub>今夜の同席者 / 小太郎 · 京太郎 · 夏目 &amp; 猫咪老师 · 真嗣</sub>
+  <img src="./assets/moonlit-anime-club-v2.jpg" alt="Q 版同人合影：安昙小太郎、市川京太郎、夏尔·凡多姆海威、花子君，在月夜樱花下共享露天放映室" width="100%" />
+  <br /><sub>今夜の同席者 / 小太郎 · 京太郎 · 夏尔 · 花子君</sub>
 </p>
 
 <p align="center">
   <a href="#residents">常驻席位</a> ·
   <a href="#quotes">台词留声机</a> ·
+  <a href="#music">月下点唱机</a> ·
   <a href="#screenings">放映目录</a>
 </p>
 
@@ -84,16 +85,16 @@
 </tr>
 <tr>
 <td width="50%" valign="top">
-<h3>🍃 夏目贵志 &amp; 猫咪老师</h3>
-<p><b>夏目 貴志 · 夏目友人帐</b><br /><sub>夏目友人帳 / Natsume's Book of Friends</sub></p>
-<p>看得见别人看不见的世界，也愿意听见那些被遗忘的名字。温柔有时是告别，有时是终于有了回家的地方。</p>
-<p><b>座位：</b>能吹到晚风的缘侧。<br /><b>随身物：</b>友人帐，以及一位很会吃的保镖。</p>
+<h3>🫖 夏尔·凡多姆海威</h3>
+<p><b>シエル・ファントムハイヴ · 黑执事</b><br /><sub>黒執事 / Black Butler</sub></p>
+<p>蓝灰色的发、眼罩、层层叠叠的领结。小小的贵族少年，漂亮又骄傲；精致的茶杯后面，还藏着不愿轻易示人的心事。</p>
+<p><b>座位：</b>茶具最齐全的丝绒靠垫。<br /><b>随身物：</b>红茶、棋子，以及留给甜点的位置。</p>
 </td>
 <td width="50%" valign="top">
-<h3>🎧 碇真嗣</h3>
-<p><b>碇 シンジ · 新世纪福音战士</b><br /><sub>新世紀エヴァンゲリオン / Evangelion</sub></p>
-<p>耳机里的世界很小，落在肩上的期待很大。比起驾驶巨大的机器，理解自己、靠近别人，有时更加困难。</p>
-<p><b>座位：</b>留一点距离，也留一个位置。<br /><b>随身物：</b>耳机、随身听、尚未整理好的心情。</p>
+<h3>🍩 花子君</h3>
+<p><b>花子くん · 地缚少年花子君</b><br /><sub>地縛少年花子くん / Toilet-bound Hanako-kun</sub></p>
+<p>旧式帽子、琥珀色的眼睛、脸颊上的小小封印。笑起来有点狡黠，靠近时又让人心软；可爱的怪谈少年，也有自己的秘密。</p>
+<p><b>座位：</b>灯笼旁，白杖代也能飘着看。<br /><b>随身物：</b>甜甜圈、一点恶作剧、没有说完的故事。</p>
 </td>
 </tr>
 </table>
@@ -109,12 +110,6 @@
 > —— 市川京太郎 ·《我心里危险的东西》
 
 **放映室手记：** 有时，成长不是突然变得厉害，而是终于愿意诚实地叫出一种感情的名字。
-
-> **「逃げちゃダメだ」**  
-> 不能逃避。  
-> —— 碇真嗣 ·《新世纪福音战士》
-
-**放映室手记：** 这句自我催促里也有恐惧与压力。它让人想问：勇气究竟是咬牙留下，还是能够理解自己的选择？休息和求助，也可以是向前的一部分。
 
 > **「ただの人間には興味ありません。」**  
 > 我对普通的人类没有兴趣。  
@@ -134,11 +129,78 @@
 日文为短句摘录，中文为本站译意；「放映室手记」是原创感想，不是角色原话。涉及少量人物心意，未展开关键剧情。
 
 - **我心里危险的东西**：[MOVIE WALKER PRESS 名场面回顾](https://press.moviewalker.jp/news/article/1317151/)
-- **新世纪福音战士**：[J-CAST 对碇真嗣台词的介绍](https://www.j-cast.com/trend/2019/04/01354118.html)
 - **凉宫春日的忧郁**：[涼宮ハルヒシリーズ大辞典 · 台词资料](https://w.atwiki.jp/haruhi_dictionary/pages/88.html)
 - **钢之炼金术师**：[日文旁白摘录](https://aipophia.jp/wisdom/q/work-manga-hagaren-exchange/)
 
 </details>
+
+
+<a id="music"></a>
+
+### 🎧 月下点唱机 · 夜に溶けるプレイリスト
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=0Uhh62MUEic">
+    <img src="./assets/moonlit-jukebox.svg" alt="月下点唱机推荐：宇多田光 One Last Kiss，点击前往官方音乐视频" width="100%" />
+  </a>
+</p>
+
+<p align="center">
+  <b>把灯调暗一点，把耳机戴好。</b><br />
+  <sub>有些故事已经散场，旋律却替我们多停留了一会儿。</sub>
+</p>
+
+**01 · One Last Kiss — 宇多田光**  
+《新·福音战士剧场版》主题曲 · [▶ 官方 MV](https://www.youtube.com/watch?v=0Uhh62MUEic)  
+轻盈的电子节拍里藏着告别的重量。像晚风吹过车窗，风景已经向后退去，心里却还留着某个人的轮廓。  
+<sub>留给：不想立刻结束的夜晚。</sub>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<h4>02 · 斜陽 / 斜阳</h4>
+<p><b>ヨルシカ / Yorushika</b><br /><sub>《我心里危险的东西》第一季 OP</sub></p>
+<p>吉他像傍晚的光，明亮里带一点酸涩。很适合小太郎和京太郎身边那些还没说出口的心事。</p>
+<p><a href="https://www.youtube.com/watch?v=Za2FmwuIEwY">▶ 官方无字幕 OP</a></p>
+</td>
+<td width="50%" valign="top">
+<h4>03 · イマココ / 此时此地</h4>
+<p><b>东山奈央</b><br /><sub>《月色真美》OP</sub></p>
+<p>清透、轻快，像放学后绕远一点的回家路。还不太会表达喜欢，却已经开始期待明天。</p>
+<p><a href="https://www.youtube.com/watch?v=ZGHRRdMWSIw">▶ 官方 MV</a></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h4>04 · 月がきれい / 月色真美</h4>
+<p><b>东山奈央</b><br /><sub>《月色真美》ED</sub></p>
+<p>把热闹慢慢放轻的一首歌。适合夜里看完一集之后，留着片尾，暂时什么也不做。</p>
+<p><a href="https://www.youtube.com/watch?v=Yeyo54qc4Cg">▶ 官方音源</a></p>
+</td>
+<td width="50%" valign="top">
+<h4>05 · Anytime Anywhere</h4>
+<p><b>milet</b><br /><sub>《葬送的芙莉莲》第一季 ED</sub></p>
+<p>温柔的开头，慢慢铺开的辽阔感。像很久以后回望一段旅程，才发现那些日常一直在心里发光。</p>
+<p><a href="https://www.youtube.com/watch?v=r105CzDvoo0">▶ 官方 MV</a></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h4>06 · more than words</h4>
+<p><b>羊文学</b><br /><sub>《咒术回战》第二季「涩谷事变」ED</sub></p>
+<p>朦胧的人声和吉他，像城市夜色里的独白。疲惫、犹豫与一点点倔强，都能留在这首歌里。</p>
+<p><a href="https://www.youtube.com/watch?v=kGY6N9DL4Jw">▶ 官方 MV</a></p>
+</td>
+<td width="50%" valign="top">
+<h4>07 · かたわれ時 / 黄昏之时</h4>
+<p><b>RADWIMPS</b><br /><sub>《你的名字。》原声配乐 · BGM</sub></p>
+<p>没有人声，让钢琴替画面呼吸。适合看书、写一点代码，或者单纯望着窗外发呆。</p>
+<p><a href="https://www.youtube.com/watch?v=mhpRipG9Zss">▶ 官方音源</a></p>
+</td>
+</tr>
+</table>
+
+<p align="center"><sub>点击曲目链接前往 YouTube 收听 · 听感文字为原创，不是歌词。</sub></p>
 
 <a id="screenings"></a>
 
@@ -155,11 +217,12 @@
 </details>
 
 <details>
-<summary>🍵 温柔馆 · 给无处安放的心情留一个座位</summary>
+<summary>🕯️ 秘密馆 · 红茶、甜甜圈与少年的另一面</summary>
 
-**《夏目友人帐》** — 名字、约定、相遇与告别；一个人与妖怪共同生活的温柔世界。
+**《黑执事》** — 华丽礼服、英伦宅邸与契约；小小的少年伯爵，背负着沉重的秘密。  
+**《地缚少年花子君》** — 从校园七大不可思议走进怪异世界，可爱的外表与幽暗的故事相互映照。
 
-*猫咪老师占了两个座位。请用点心协商，不要硬挤。*
+*夏尔的红茶请先放好。花子君，你不能把所有甜甜圈都拿走。*
 
 </details>
 
