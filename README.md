@@ -1,41 +1,42 @@
 <p align="center">
-  <img src="./header.svg" alt="Tokyo no Kami — Midnight Lab" width="100%" />
+  <img src="./moonlit-workshop.jpg" alt="Tokyoのかみ · 月明かりの小さな工房 — 月夜、樱花、白发神官与小狐狸" width="100%" />
 </p>
 
+<h3 align="center">✦ 今夜も、好きなものをつくろう。</h3>
 <p align="center">
-  <b>把好奇心，写成可以运行的东西。</b><br />
-  <sub>Turning small curiosities into things that work.</sub>
+  今晚，也做一点自己喜欢的东西。<br />
+  <sub>Welcome to my little corner of the internet.</sub>
 </p>
 
----
+<p align="center"><img src="./sakura-divider.svg" alt="樱花分隔线" width="100%" /></p>
 
-### こんにちは、Tokyo です。
+<table>
+<tr>
+<td width="70%" valign="middle">
+  <h3>🌸 こんばんは、Tokyo です。</h3>
+  <p>欢迎来到我的月下工房。</p>
+  <p>喜欢二次元、薄荷青，以及那些<br />「要是能做出来就好了」的小小幻想。</p>
+  <p>正在学习 AI、编程和电子。<br />想把喜欢的画面变成交互，把生活里的麻烦变成小工具。</p>
+  <p><sub>设定是白发神官，日常是和 bug 对线。<br />还在练级，但好奇心已经点满了。</sub></p>
+</td>
+<td width="30%" align="center" valign="middle">
+  <img src="./tokyo-chibi.png" alt="抱着笔记本的白发少年和睡着的小狐狸" width="210" /><br />
+  <sub>工房主人 · Tokyo</sub>
+</td>
+</tr>
+</table>
 
-这里是我的个人实验室。喜欢 AI、代码、电子，以及那些看起来有点奇怪、做出来却很有意思的想法。
+### 🗝️ 尚未通关的支线
 
-正在从基础开始，一边学习，一边把生活里的小问题变成小作品。
+- **让代码学会一点魔法**　研究 AI 与 Agent，试着把想法变成能工作的伙伴。
+- **给日常装上快捷键**　写自动化工具，连接设备，解决自己的小麻烦。
+- **把喜欢的世界做出来**　探索动漫风界面、交互与各种奇怪但有趣的实验。
 
-### 正在探索 · Exploring
-
-| 方向 | 想做的事 |
-| :--- | :--- |
-| **AI & Agents** | 理解模型，让 AI 参与真正有用的工作 |
-| **Code & Automation** | 写小工具，把重复的事情交给程序 |
-| **Hardware & Networks** | 连接设备，看看软硬件一起能做什么 |
-| **Creative Experiments** | 尝试交互、视觉和不太常规的项目 |
-
-### 实验室手记 · Lab notes
-
-- **Learn** — 先弄懂一个具体问题。
-- **Build** — 做出一个能运行的小版本。
-- **Refine** — 用起来，再慢慢打磨。
-
-作品会随着学习逐步放上来。这个空间刚刚开始。
-
-<p align="center">
-  <sub>好奇心常亮。 · Stay curious, keep building.</sub>
-</p>
+<p align="center"><img src="./sakura-divider.svg" alt="樱花分隔线" width="100%" /></p>
 
 <p align="center">
-  <img src="./footer.svg" alt="Mint and sakura accent line" width="100%" />
+  <b>🌙 这里是故事的序章。</b><br />
+  <sub>作品慢慢做，世界慢慢探索。</sub><br /><br />
+  <sub>またね。次のセーブポイントで。</sub><br />
+  <sub>下一个存档点见。</sub>
 </p>

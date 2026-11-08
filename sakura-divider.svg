@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="46" viewBox="0 0 1200 46" role="img" aria-label="Sakura and moonlight divider">
+<defs><linearGradient id="line"><stop stop-color="#9ddfd8" stop-opacity="0"/><stop offset=".3" stop-color="#a6ddd7"/><stop offset=".7" stop-color="#deb3ce"/><stop offset="1" stop-color="#deb3ce" stop-opacity="0"/></linearGradient><ellipse id="petal" cx="600" cy="14" rx="5" ry="9"/></defs>
+<path d="M0 23H560 M640 23H1200" fill="none" stroke="url(#line)" stroke-width="1.5"/>
+<g fill="#deb3ce" opacity=".9"><use href="#petal"/><use href="#petal" transform="rotate(72 600 23)"/><use href="#petal" transform="rotate(144 600 23)"/><use href="#petal" transform="rotate(216 600 23)"/><use href="#petal" transform="rotate(288 600 23)"/></g>
+<circle cx="600" cy="23" r="3" fill="#fff2df"/><path d="M545 19L549 23L545 27L541 23Z M655 19L659 23L655 27L651 23Z" fill="#97d6cd"/>
+</svg>
