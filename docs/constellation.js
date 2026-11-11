@@ -16,10 +16,10 @@
     if (!age.points.length || !name.points.length || area.width <= 0 || area.height <= 0) return null;
     groups = Math.max(3, Math.min(5, groups));
     const random = randomGenerator(seed), anchors = groups === 3 ? [[.22,.25],[.78,.32],[.5,.76]] : groups === 4 ? [[.23,.24],[.76,.29],[.25,.76],[.75,.75]] : [[.23,.18],[.77,.29],[.24,.65],[.77,.81],[.51,.49]];
-    const ageWidth = Math.min(area.width * .39, 116), ageHeight = area.height * .27;
+    const ageWidth = Math.min(area.width * .40, 150), ageHeight = area.height * .30;
     const ageTargets = anchors.map(([x,y]) => fitGlyph(age, { x: area.x + x * area.width, y: area.y + y * area.height }, ageWidth, ageHeight));
     const nameCenter = { x: area.x + area.width * .5, y: area.y + area.height * .5 };
-    const nameTargets = fitGlyph(name, nameCenter, area.width * .91, area.height * .46).sort((a,b) => a.x - b.x || a.y - b.y);
+    const nameTargets = fitGlyph(name, nameCenter, area.width * .94, area.height * .62).sort((a,b) => a.x - b.x || a.y - b.y);
     const count = Math.min(maxParticles, Math.max(age.points.length * groups, name.points.length));
     const perGroup = Math.ceil(count / groups), gap = 740, formation = 650;
     const morphAt = (groups - 1) * gap + formation + 900, settleAt = morphAt + 1800, scatterAt = settleAt + 2200, endAt = scatterAt + 2000;
@@ -41,8 +41,8 @@
         cx: clamp((target.x + nameTarget.x) / 2 + bend * .4, area.x + 8, area.x + area.width - 8),
         cy: clamp((target.y + nameTarget.y) / 2 + bend, area.y + 8, area.y + area.height - 8),
         vx: Math.cos(scatterAngle) * speed, vy: Math.sin(scatterAngle) * speed,
-        color: i % 4 === 0 ? '#b2ff3a' : i % 7 === 0 ? '#dac3ff' : '#a875ed',
-        size: 1.1 + random() * .5, phaseOffset: random() * Math.PI * 2, x: originX, y: originY, alpha: 0
+        color: i % 4 === 0 ? '#a6ff00' : '#a04aff',
+        size: 2.0 + random() * .55, phaseOffset: random() * Math.PI * 2, x: originX, y: originY, alpha: 0
       });
     }
     return { area, groups, particles, startedAt, formation, morphAt, settleAt, scatterAt, endAt, loop, cycle: 0, cycleDuration: endAt + Math.max(0, pauseMs), phase: 'numbers' };

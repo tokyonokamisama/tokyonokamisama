@@ -130,7 +130,7 @@ function constellationArea() {
   const narrow = skyWidth < 720 && skyHeight > skyWidth * .9;
   if (document.documentElement.classList.contains('has-personal-photo')) {
     const top = Math.max(headerRect.bottom - canvasRect.top + 20, 85), bottom = skyHeight * .38;
-    return { x: skyWidth * (narrow ? .70 : .68), y: top, width: skyWidth * (narrow ? .265 : .285), height: Math.max(100, bottom - top), narrow };
+    return { x: skyWidth * (narrow ? .70 : .61), y: top, width: skyWidth * (narrow ? .265 : .355), height: Math.max(100, bottom - top), narrow };
   }
   if (narrow) {
     const bottom = skyHeight * .28, top = Math.min(Math.max(headerRect.bottom - canvasRect.top + 18, skyHeight * .09), bottom - 75);
@@ -157,8 +157,11 @@ async function ageConstellation() {
 function drawConstellation(time) {
   if (!constellation) return;
   if (!Constellation.step(constellation, time)) { constellation = null; document.documentElement.classList.remove('constellation-active'); return; }
+  // Normal compositing keeps the purple saturated instead of washing it white.
+  ctx.globalCompositeOperation = 'source-over';
   for (const p of constellation.particles) {
     if (p.alpha <= .005) continue;
+    ctx.globalAlpha = p.alpha * .65; ctx.fillStyle = '#160728'; ctx.fillRect(p.x - .7, p.y - .7, p.size + 1.4, p.size + 1.4);
     ctx.globalAlpha = p.alpha; ctx.fillStyle = p.color; ctx.fillRect(p.x, p.y, p.size, p.size);
   }
 }

@@ -64,3 +64,6 @@
  .has-personal-photo .lyrics-dock,.is-fullscreen.has-personal-photo .lyrics-dock{left:auto;right:4%;width:28%;bottom:65px;height:150px}
  .has-personal-photo .birthday-poster>.episode,.is-fullscreen.has-personal-photo .birthday-poster>.episode{font-size:28px}
 }
+/* Larger title lettering while leaving the portrait unobstructed. */
+@media(min-width:720px){.has-personal-photo .city-heading,.has-personal-photo.constellation-active .city-heading,.is-fullscreen.has-personal-photo .city-heading,.is-fullscreen.has-personal-photo.constellation-active .city-heading{top:9%;width:min(52vw,810px,calc(100svh * .39 * 1.633))}.has-personal-photo .birthday-poster>.episode,.is-fullscreen.has-personal-photo .birthday-poster>.episode{font-size:clamp(40px,4vw,62px)}.has-personal-photo .lyrics-dock,.is-fullscreen.has-personal-photo .lyrics-dock{bottom:12%}}
+@media(min-width:720px) and (max-height:760px){.has-personal-photo .city-heading,.has-personal-photo.constellation-active .city-heading,.is-fullscreen.has-personal-photo .city-heading,.is-fullscreen.has-personal-photo.constellation-active .city-heading{width:min(49vw,calc(100svh * .33 * 1.633))}.has-personal-photo .birthday-poster>.episode,.is-fullscreen.has-personal-photo .birthday-poster>.episode{font-size:34px}}
