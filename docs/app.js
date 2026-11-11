@@ -128,6 +128,10 @@ function sampleGlyph(text, maxPoints, isName = false) {
 function constellationArea() {
   const canvasRect = canvas.getBoundingClientRect(), headerRect = $('.header').getBoundingClientRect();
   const narrow = skyWidth < 720 && skyHeight > skyWidth * .9;
+  if (document.documentElement.classList.contains('has-personal-photo')) {
+    const top = Math.max(headerRect.bottom - canvasRect.top + 20, 85), bottom = skyHeight * .38;
+    return { x: skyWidth * (narrow ? .70 : .68), y: top, width: skyWidth * (narrow ? .265 : .285), height: Math.max(100, bottom - top), narrow };
+  }
   if (narrow) {
     const bottom = skyHeight * .28, top = Math.min(Math.max(headerRect.bottom - canvasRect.top + 18, skyHeight * .09), bottom - 75);
     return { x: skyWidth * .08, y: top, width: skyWidth * .84, height: Math.max(75, bottom - top), narrow };
@@ -230,7 +234,7 @@ window.addEventListener('hashchange', () => applyConfig(readConfig()));
 
 // Real audio and lyrics are imported by the visitor. No synthesized substitute.
 const audio = $('#audio');
-let localAudioFile = null, localAudioObjectUrl = '', externalAudioUrl = '', externalLyricsUrl = '', recipientFontUrl = '';
+let localAudioFile = null, localAudioObjectUrl = '', externalAudioUrl = '', externalLyricsUrl = '', recipientFontUrl = '', personalPhotoUrl = '';
 let rawLyrics = '', cues = [], lyricLines = [], lastCue = -999, lyricFrame = 0, lyricLoadId = 0;
 let draftCues = [], stampCursor = 0, manualSync = false, bundledMedia = false;
 function safeHttps(value) {
@@ -240,6 +244,24 @@ function safeHttps(value) {
 function mediaPath(value) {
   if (!value) return '';
   try { const u = new URL(value, location.href); return u.protocol === 'https:' || (u.origin === location.origin && u.protocol === 'http:') ? u.href : ''; } catch { return ''; }
+}
+function applyPersonalPhoto(source) {
+  const url = mediaPath(source); if (!url) return;
+  const photo = $('.city-photo');
+  photo.onload = () => {
+    personalPhotoUrl = url; document.documentElement.classList.add('has-personal-photo');
+    $('.opening-backdrop').style.backgroundImage = 'url("' + url.replace(/"/g, '%22') + '")';
+    $('#personal-photo-credit').hidden = false;
+    if (state === 'celebration') resizeSky();
+  };
+  photo.onerror = () => {
+    personalPhotoUrl = ''; document.documentElement.classList.remove('has-personal-photo');
+    $('.opening-backdrop').style.backgroundImage = ''; $('#personal-photo-credit').hidden = true;
+    photo.onload = null; photo.onerror = null; photo.src = 'assets/shenzhen.jpg';
+    photo.alt = '深圳城市夜景';
+  };
+  photo.alt = '主角背對鏡頭倚著欄杆，望向深圳的紫色夜空與城市燈火。';
+  photo.src = url;
 }
 function openMusic() { if (!$('#music-dialog').open) $('#music-dialog').showModal(); }
 $('#music-settings').addEventListener('click', openMusic);
@@ -395,6 +417,7 @@ $('#export-package').addEventListener('click', async () => {
     const lyricsPath = rawLyrics || cues.length ? 'assets/soundtrack.lrc' : '';
     if (lyricsPath) zip.file(lyricsPath, cues.length ? Lyrics.formatLrc(cues) : rawLyrics);
     const mediaManifest = { audio: musicPath, lyrics: lyricsPath, title: $('#song-title').value.trim() };
+    if (personalPhotoUrl) { const response = await fetch(personalPhotoUrl); if (!response.ok) throw new Error('photo'); const ext = new URL(personalPhotoUrl).pathname.match(/\.(jpg|jpeg|png|webp|avif)$/i)?.[1] || 'jpg'; const path = 'assets/portrait.' + ext.toLowerCase(); zip.file(path, await response.arrayBuffer()); mediaManifest.photo = path; }
     if (recipientFontUrl) { const response = await fetch(recipientFontUrl); if (!response.ok) throw new Error('font'); zip.file('assets/recipient-mincho.ttf', await response.arrayBuffer()); mediaManifest.font = 'assets/recipient-mincho.ttf'; }
     zip.file('media.json', JSON.stringify(mediaManifest, null, 2));
     zip.file('.nojekyll', '');
@@ -409,6 +432,7 @@ async function initializeMedia() {
   applyConfig(readConfig());
   let packaged = {};
   try { const response = await fetch('media.json', { cache: 'no-cache' }); if (response.ok) packaged = await response.json(); } catch { /* A generic template can run without music. */ }
+  if (packaged.photo) applyPersonalPhoto(packaged.photo);
   if (!audio.getAttribute('src')) {
     const source = config.music || mediaPath(packaged.audio);
     if (source) { externalAudioUrl = config.music || ''; bundledMedia = !config.music && Boolean(packaged.audio); $('#music-url').value = externalAudioUrl; setAudioSource(source, config.title || String(packaged.title || '')); }
