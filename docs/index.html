@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a090f">
+  <meta name="description" content="初号机配色的 EVA 风格生日特别篇。紫色与荧光绿、深圳夜景，以及一份只属于你的祝福。">
+  <title>第贰拾年 · 生日特别篇</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/birthday.svg" as="image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="header">
+  <a href="#" id="home" class="wordmark" aria-label="返回生日序幕"><span class="unit-label">01</span><span>生日特别篇<small>THE BIRTHDAY PROJECT</small></span></a>
+  <div class="header-actions"><button id="sound" aria-pressed="false" aria-label="开启背景音"><span class="equalizer" aria-hidden="true">▂▅▃</span><span id="sound-label">声音关闭</span></button><button id="customize">制作一份祝福 ↗</button></div>
+</header>
+<main>
+  <section class="scene opening" id="opening" aria-labelledby="opening-title">
+    <div class="opening-backdrop" aria-hidden="true"></div><div class="halo" aria-hidden="true"></div>
+    <div class="poster">
+      <p class="eyebrow">SPECIAL EPISODE <span>—</span> FOR YOUR NEXT CHAPTER</p>
+      <h1 id="opening-title"><span class="episode" data-episode>第贰拾年</span><img src="assets/birthday.svg" alt="生，日、快乐。" width="800" height="490"></h1>
+      <div class="poster-sign"><span>献给 <strong data-recipient>亲爱的你</strong></span><span class="mono">A NEW CHAPTER. A NEW YOU.</span></div>
+    </div>
+    <aside class="side-note" aria-hidden="true"><span>UNIT : 01</span><i></i><span>紫色是热爱，绿色是生长。</span></aside>
+    <div class="opening-bottom"><span class="location mono">SHENZHEN / 22°32′N 114°03′E</span><button class="start-button" id="start">启动生日特别篇 <span>↗</span></button><span class="version mono">EPISODE <b data-age>20</b> / ∞</span></div>
+  </section>
+  <section class="scene countdown" id="countdown" aria-label="生日开场倒数" hidden>
+    <p class="eyebrow">CONNECTING YOUR NEXT CHAPTER</p><span class="count-number" id="count-number" aria-hidden="true">03</span><p id="count-text" class="count-text" role="status" aria-live="polite">正在收集深圳的万家灯火。</p><button class="skip" id="skip">跳过倒数 →</button>
+  </section>
+  <section class="scene celebration" id="celebration" aria-labelledby="birthday-heading" hidden>
+    <img class="city-photo" src="assets/shenzhen.jpg" width="3840" height="2560" alt="从莲花山眺望深圳，市民中心与福田天际线灯火通明。">
+    <div class="city-shade" aria-hidden="true"></div><canvas id="sky" aria-hidden="true"></canvas>
+    <div class="city-heading"><p class="eyebrow">SHENZHEN, TONIGHT <span>/</span> JUST FOR YOU</p><h2 id="birthday-heading" tabindex="-1"><span data-recipient>亲爱的你</span>，<br><span data-age-words>二十岁</span><em>生日快乐。</em></h2><p class="city-blessing">借深圳的万家灯火，<br>祝你在新的故事里，自由、热烈、闪闪发光。</p></div>
+    <p class="sky-hint mono" id="sky-hint">点击夜空，让一束烟花为你升起。</p>
+    <div class="city-bottom"><div class="city-buttons"><button id="firework-button">放一束烟花 <span>✳</span></button><button id="letters-button" class="green-button">三封来自未来的信 <span>↗</span></button></div><div class="minor-actions"><button id="share">复制这份祝福</button><button id="restart">重新放映 ↻</button></div></div>
+  </section>
+</main>
+<dialog id="letters-dialog" aria-labelledby="letter-heading"><button class="dialog-close" id="close-letters" aria-label="关闭来信">关闭 ×</button><div class="letter-shell"><p class="eyebrow">LETTERS FROM YOUR FUTURE</p><nav class="letter-tabs" aria-label="选择未来来信"><button data-letter="0" aria-pressed="true">01 / 自由</button><button data-letter="1" aria-pressed="false">02 / 热爱</button><button data-letter="2" aria-pressed="false">03 / 被爱</button></nav><div class="letter-content" aria-live="polite"><p class="letter-number" id="letter-number">LETTER 01</p><h2 id="letter-heading">愿你，<br><em>自由。</em></h2><div id="letter-copy"><p>不必急着成为谁，也不必照着别人的剧本生活。</p><p>偶尔绕远，偶尔停下，都没有关系。<br>愿你有选择方向的勇气，也有享受沿途的从容。</p></div><p class="letter-sign">献给 <span data-recipient>亲爱的你</span> · <span data-age-words>二十岁</span></p></div><button id="next-letter" class="next-letter">下一封信 <span>→</span></button></div></dialog>
+<dialog id="editor-dialog" aria-labelledby="editor-heading"><button class="dialog-close" id="close-editor" aria-label="关闭制作窗口">关闭 ×</button><form id="editor-form"><p class="eyebrow">MAKE IT YOURS</p><h2 id="editor-heading">给特别的人，<br><em>一份特别篇。</em></h2><label for="recipient-input">收件人的名字</label><input id="recipient-input" name="recipient" type="text" maxlength="24" required autocomplete="off" placeholder="写下对方的名字"><label for="age-input">迎来的年龄</label><input id="age-input" name="age" type="number" min="1" max="120" value="20" required><p class="editor-note">名字只保存在专属链接的 # 片段里，由浏览器读取。<br>不会写入模板仓库，也不会发送到服务器。</p><button type="submit" class="editor-submit">生成并复制专属链接 ↗</button><div id="link-result" hidden><label for="personal-url">专属链接（也可以手动复制）</label><input id="personal-url" type="text" readonly></div></form></dialog>
+<footer><span>UNIT-01 INSPIRED / BIRTHDAY EDITION</span><details><summary>影像与创意鸣谢</summary><p>城市影像：<a href="https://commons.wikimedia.org/wiki/File:Civic_Center,_Shenzhen_Lianhuashan_Park_(2018.9)_Night.jpg" target="_blank" rel="noopener">Sparktour / Wikimedia Commons</a>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>。原图未修改，显示时叠加调色。字体 Noto Serif SC，SIL OFL 1.1。互动创意参考 <a href="https://github.com/ayusharma/birthday" target="_blank" rel="noopener">ayusharma/birthday</a> 与 <a href="https://github.com/Martarion-Code/Countdown-Birthday-and-Fireworks-Animation" target="_blank" rel="noopener">Martarion-Code 的倒数烟花项目</a>，未复制代码。</p></details></footer>
+<div id="toast" role="status" class="toast"></div><script src="app.js" defer></script>
+</body>
+</html>
