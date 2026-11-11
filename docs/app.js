@@ -52,7 +52,6 @@ function setScene(next) {
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 function start() {
-  clearTimeout(autoTimer); $('#play-gate').hidden = true;
   clearTimers(); stopSky();
   if (reducedMotion.matches) { showCity(); return; }
   setScene('countdown');
@@ -75,7 +74,7 @@ function showCity() {
   }
 }
 function reset() {
-  clearTimeout(autoTimer); audio.pause(); clearTimers(); stopSky(); setScene('opening'); $('#start').focus({ preventScroll: true });
+  audio.pause(); clearTimers(); stopSky(); setScene('opening'); $('#start').focus({ preventScroll: true });
 }
 $('#start').addEventListener('click', playAndStart);
 $('#skip').addEventListener('click', showCity);
@@ -188,7 +187,7 @@ window.addEventListener('hashchange', () => applyConfig(readConfig()));
 const audio = $('#audio');
 let localAudioFile = null, localAudioObjectUrl = '', externalAudioUrl = '', externalLyricsUrl = '';
 let rawLyrics = '', cues = [], lyricLines = [], lastCue = -999, lyricFrame = 0, lyricLoadId = 0;
-let draftCues = [], stampCursor = 0, manualSync = false, bundledMedia = false, autoTimer = 0;
+let draftCues = [], stampCursor = 0, manualSync = false, bundledMedia = false;
 function safeHttps(value) {
   if (!value) return '';
   try { const u = new URL(value); return u.protocol === 'https:' && !u.username && !u.password ? u.href : ''; } catch { return ''; }
@@ -197,7 +196,7 @@ function mediaPath(value) {
   if (!value) return '';
   try { const u = new URL(value, location.href); return u.protocol === 'https:' || (u.origin === location.origin && u.protocol === 'http:') ? u.href : ''; } catch { return ''; }
 }
-function openMusic() { clearTimeout(autoTimer); if (!$('#music-dialog').open) $('#music-dialog').showModal(); }
+function openMusic() { if (!$('#music-dialog').open) $('#music-dialog').showModal(); }
 $('#music-settings').addEventListener('click', openMusic);
 $('#close-music').addEventListener('click', () => $('#music-dialog').close());
 function updateTrackLabel() { $('#track-label').textContent = $('#song-title').value.trim() || 'YOUR SONG, YOUR STORY.'; }
@@ -211,11 +210,10 @@ function setAudioSource(source, title = '') {
 async function requestMusic(gesture = false) {
   if (!audio.getAttribute('src')) return false;
   let playTimeout;
-  try { await Promise.race([audio.play(), new Promise((_, reject) => { playTimeout = setTimeout(() => reject(new Error('Playback timeout')), 8000); })]); $('#play-gate').hidden = true; return true; }
+  try { await Promise.race([audio.play(), new Promise((_, reject) => { playTimeout = setTimeout(() => reject(new Error('Playback timeout')), 8000); })]); return true; }
   catch (error) {
     if (error.name === 'NotAllowedError') {
-      if (state === 'opening') $('#play-gate').hidden = false;
-      $('#audio-status').textContent = '瀏覽器需要你點一下，才允許有聲播放。';
+      $('#audio-status').textContent = '請點「啟動生日特別篇」，連同音樂開始放映。';
       if (gesture) toast('請點一下播放，允許這個頁面的音樂。');
     } else {
       $('#audio-status').textContent = '無法播放音樂，請檢查格式或改用音訊直鏈。';
@@ -225,7 +223,6 @@ async function requestMusic(gesture = false) {
   } finally { clearTimeout(playTimeout); }
 }
 function playAndStart() { requestMusic(true); start(); }
-$('#play-gate').addEventListener('click', playAndStart);
 $('#sound').addEventListener('click', () => {
   if (!audio.getAttribute('src')) { openMusic(); return; }
   if (audio.paused) requestMusic(true); else audio.pause();
@@ -371,9 +368,9 @@ async function initializeMedia() {
   }
   const lyricsSource = config.lyrics || mediaPath(packaged.lyrics);
   if (lyricsSource && !rawLyrics) { $('#lyrics-url').value = config.lyrics || ''; loadLyricsUrl(lyricsSource); }
-  const playing = audio.getAttribute('src') ? await requestMusic() : false;
-  if (audio.getAttribute('src') && !playing && !$('#play-gate').hidden) return;
-  if (!$('#music-dialog').open && !$('#editor-dialog').open) autoTimer = setTimeout(start, reducedMotion.matches ? 0 : 2400);
+  // Keep the opening title and its entry button visible until the visitor enters.
+  // Music may start on the opening screen if the browser permits autoplay.
+  if (audio.getAttribute('src')) await requestMusic();
 }
 initializeMedia();
 

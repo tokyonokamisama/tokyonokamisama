@@ -8,7 +8,7 @@
   <title>第貳拾年 · 生日特別篇</title>
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/birthday.svg" as="image">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -25,7 +25,7 @@
       <div class="poster-sign"><span>獻給 <strong data-recipient>親愛的你</strong></span><span class="mono">A NEW CHAPTER. A NEW YOU.</span></div>
     </div>
     <aside class="side-note" aria-hidden="true"><span>UNIT : 01</span><i></i><span>紫色是熱愛，綠色是生長。</span></aside>
-    <button id="play-gate" class="play-gate" hidden>點一下，連同音樂開始放映 <span>↗</span></button><div class="opening-bottom"><span class="location mono">SHENZHEN / 22°32′N 114°03′E</span><button class="start-button" id="start">重新放映 <span>↗</span></button><span class="version mono">EPISODE <b data-age>20</b> / ∞</span></div>
+    <div class="opening-bottom"><span class="location mono">SHENZHEN / 22°32′N 114°03′E</span><button class="start-button" id="start">啟動生日特別篇 <span>↗</span></button><span class="version mono">EPISODE <b data-age>20</b> / ∞</span></div>
   </section>
   <section class="scene countdown" id="countdown" aria-label="生日開場倒數" hidden>
     <p class="eyebrow">CONNECTING YOUR NEXT CHAPTER</p><span class="count-number" id="count-number" aria-hidden="true">03</span><p id="count-text" class="count-text" role="status" aria-live="polite">正在收集深圳的萬家燈火。</p><button class="skip" id="skip">跳過倒數 →</button>
@@ -45,8 +45,8 @@
 <div class="music-layout"><section class="music-source"><h3>01 / 匯入音樂</h3><label for="audio-file">選擇音訊檔案</label><input id="audio-file" type="file" accept="audio/*,.mp3,.m4a,.wav,.ogg,.flac,.aac"><p class="field-help">支援 MP3、M4A 等瀏覽器可播放的音訊。</p><label for="music-url">或使用音訊直鏈</label><input id="music-url" type="url" placeholder="https://…/your-song.mp3"><button id="load-music-url" class="subtle-button">載入音樂直鏈 ↗</button><audio id="audio" controls preload="metadata"></audio><p id="audio-status" role="status" class="field-help">尚未匯入音樂。</p><label for="song-title">顯示的曲名（選填）</label><input id="song-title" type="text" maxlength="100" placeholder="為這一刻選的歌"><div class="media-divider"></div><h3>03 / 分享這個版本</h3><p class="field-help">本機檔案只在這個頁面試聽。匯出分享包會裝入音檔與歌詞，重新發布後，朋友打開就能載入。音訊直鏈與歌詞直鏈可以直接隨專屬連結分享。</p><button id="export-package" class="export-button">匯出含音樂的分享包 ↓</button><p id="export-status" role="status" class="field-help"></p></section>
 <section class="lyrics-source"><h3>02 / 加入歌詞</h3><label for="lyrics-file">匯入 LRC 或 TXT</label><input id="lyrics-file" type="file" accept=".lrc,.txt,text/plain"><label for="lyrics-url">或使用 LRC 歌詞直鏈</label><input id="lyrics-url" type="url" placeholder="https://…/your-song.lrc"><button id="load-lyrics-url" class="subtle-button">載入歌詞直鏈 ↗</button><label for="lyrics-text">也可以直接貼入歌詞</label><textarea id="lyrics-text" rows="7" spellcheck="false" placeholder="帶時間軸的 LRC 會自動同步。
 只有普通歌詞？每句一行，再跟著音樂逐句打點。"></textarea><button id="apply-lyrics" class="subtle-button">套用歌詞</button><p id="lyrics-status" role="status" class="field-help">尚未匯入歌詞。</p><div class="manual-sync"><h4>沒有時間軸？跟著歌曲打點。</h4><p class="field-help">先貼入每句一行的歌詞。點「從頭打點」，歌曲會從頭播放；每句開始時點一次「記錄下一句」。</p><div class="sync-actions"><button id="start-sync">從頭打點</button><button id="stamp-line" disabled>記錄下一句</button></div><p id="sync-preview" class="sync-preview">等待歌詞。</p><div class="sync-actions secondary"><button id="download-lrc">下載 LRC ↓</button><button id="end-sync">結束打點</button></div></div></section></div>
-<p class="autoplay-note">頁面打開時會嘗試播放你設定的音樂。若瀏覽器攔截自動播放，點一下「開始放映」即可；網站不會繞過瀏覽器的聲音設定。</p></div></dialog>
+<p class="autoplay-note">頁面打開時會嘗試播放你設定的音樂。若瀏覽器攔截自動播放，點一下「啟動生日特別篇」即可；網站不會繞過瀏覽器的聲音設定。</p></div></dialog>
 <footer><span>UNIT-01 INSPIRED / BIRTHDAY EDITION</span><details><summary>影像與創意鳴謝</summary><p>城市影像：<a href="https://commons.wikimedia.org/wiki/File:Civic_Center,_Shenzhen_Lianhuashan_Park_(2018.9)_Night.jpg" target="_blank" rel="noopener">Sparktour / Wikimedia Commons</a>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>。原圖未修改，顯示時疊加調色。字體 Noto Serif TC，SIL OFL 1.1。互動創意參考 <a href="https://github.com/ayusharma/birthday" target="_blank" rel="noopener">ayusharma/birthday</a> 與 <a href="https://github.com/Martarion-Code/Countdown-Birthday-and-Fireworks-Animation" target="_blank" rel="noopener">Martarion-Code 的倒數煙花項目</a>，未複製代碼。</p></details></footer>
-<div id="toast" role="status" class="toast"></div><script src="vendor/opencc.js"></script><script src="vendor/jszip.min.js"></script><script src="lyrics.js"></script><script src="app.js?v=3" defer></script>
+<div id="toast" role="status" class="toast"></div><script src="vendor/opencc.js"></script><script src="vendor/jszip.min.js"></script><script src="lyrics.js"></script><script src="app.js?v=4" defer></script>
 </body>
 </html>
