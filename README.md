@@ -14,7 +14,7 @@
 
 纯 HTML / CSS / JavaScript，无依赖、无构建步骤。静态资源都在 `docs/`。
 
-GitHub Pages 设置：选择 `Deploy from a branch` → `main` → `/docs`。也可以把 `docs/` 的内容上传至任意静态托管平台。
+GitHub Pages 设置：选择 `Deploy from a branch` → 模板所在分支（本仓库为 `birthday-template-unit01`）→ `/docs`。也可以把 `docs/` 的内容上传至任意静态托管平台。
 
 本地预览：在 `docs/` 目录运行 `python -m http.server 8080`。
 
