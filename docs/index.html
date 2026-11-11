@@ -1,46 +1,52 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0a090f">
-  <meta name="description" content="初号机配色的 EVA 风格生日特别篇。紫色与荧光绿、深圳夜景，以及一份只属于你的祝福。">
-  <title>第贰拾年 · 生日特别篇</title>
+  <meta name="description" content="初號機配色的 EVA 風格生日特別篇。紫色與熒光綠、深圳夜景，以及一份只屬於你的祝福。">
+  <title>第貳拾年 · 生日特別篇</title>
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/birthday.svg" as="image">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
 <header class="header">
-  <a href="#" id="home" class="wordmark" aria-label="返回生日序幕"><span class="unit-label">01</span><span>生日特别篇<small>THE BIRTHDAY PROJECT</small></span></a>
-  <div class="header-actions"><button id="sound" aria-pressed="false" aria-label="开启背景音"><span class="equalizer" aria-hidden="true">▂▅▃</span><span id="sound-label">声音关闭</span></button><button id="customize">制作一份祝福 ↗</button></div>
+  <a href="#" id="home" class="wordmark" aria-label="返回生日序幕"><span class="unit-label">01</span><span>生日特別篇<small>THE BIRTHDAY PROJECT</small></span></a>
+  <div class="header-actions"><button id="sound" aria-pressed="false" aria-label="播放或暫停匯入的音樂"><span class="equalizer" aria-hidden="true">▂▅▃</span><span id="sound-label">匯入音樂</span></button><button id="fullscreen" aria-label="進入全螢幕放映" aria-pressed="false"><span class="fullscreen-label">全螢幕 </span><span aria-hidden="true">⛶</span></button><button id="music-settings">音樂與歌詞</button><button id="customize">製作一份祝福 ↗</button></div>
 </header>
 <main>
   <section class="scene opening" id="opening" aria-labelledby="opening-title">
     <div class="opening-backdrop" aria-hidden="true"></div><div class="halo" aria-hidden="true"></div>
     <div class="poster">
       <p class="eyebrow">SPECIAL EPISODE <span>—</span> FOR YOUR NEXT CHAPTER</p>
-      <h1 id="opening-title"><span class="episode" data-episode>第贰拾年</span><img src="assets/birthday.svg" alt="生，日、快乐。" width="800" height="490"></h1>
-      <div class="poster-sign"><span>献给 <strong data-recipient>亲爱的你</strong></span><span class="mono">A NEW CHAPTER. A NEW YOU.</span></div>
+      <h1 id="opening-title"><span class="episode" data-episode>第貳拾年</span><img src="assets/birthday.svg" alt="生，日、快樂。" width="800" height="490"></h1>
+      <div class="poster-sign"><span>獻給 <strong data-recipient>親愛的你</strong></span><span class="mono">A NEW CHAPTER. A NEW YOU.</span></div>
     </div>
-    <aside class="side-note" aria-hidden="true"><span>UNIT : 01</span><i></i><span>紫色是热爱，绿色是生长。</span></aside>
-    <div class="opening-bottom"><span class="location mono">SHENZHEN / 22°32′N 114°03′E</span><button class="start-button" id="start">启动生日特别篇 <span>↗</span></button><span class="version mono">EPISODE <b data-age>20</b> / ∞</span></div>
+    <aside class="side-note" aria-hidden="true"><span>UNIT : 01</span><i></i><span>紫色是熱愛，綠色是生長。</span></aside>
+    <button id="play-gate" class="play-gate" hidden>點一下，連同音樂開始放映 <span>↗</span></button><div class="opening-bottom"><span class="location mono">SHENZHEN / 22°32′N 114°03′E</span><button class="start-button" id="start">重新放映 <span>↗</span></button><span class="version mono">EPISODE <b data-age>20</b> / ∞</span></div>
   </section>
-  <section class="scene countdown" id="countdown" aria-label="生日开场倒数" hidden>
-    <p class="eyebrow">CONNECTING YOUR NEXT CHAPTER</p><span class="count-number" id="count-number" aria-hidden="true">03</span><p id="count-text" class="count-text" role="status" aria-live="polite">正在收集深圳的万家灯火。</p><button class="skip" id="skip">跳过倒数 →</button>
+  <section class="scene countdown" id="countdown" aria-label="生日開場倒數" hidden>
+    <p class="eyebrow">CONNECTING YOUR NEXT CHAPTER</p><span class="count-number" id="count-number" aria-hidden="true">03</span><p id="count-text" class="count-text" role="status" aria-live="polite">正在收集深圳的萬家燈火。</p><button class="skip" id="skip">跳過倒數 →</button>
   </section>
   <section class="scene celebration" id="celebration" aria-labelledby="birthday-heading" hidden>
-    <img class="city-photo" src="assets/shenzhen.jpg" width="3840" height="2560" alt="从莲花山眺望深圳，市民中心与福田天际线灯火通明。">
+    <img class="city-photo" src="assets/shenzhen.jpg" width="3840" height="2560" alt="從蓮花山眺望深圳，市民中心與福田天際線燈火通明。">
     <div class="city-shade" aria-hidden="true"></div><canvas id="sky" aria-hidden="true"></canvas>
-    <div class="city-heading"><p class="eyebrow">SHENZHEN, TONIGHT <span>/</span> JUST FOR YOU</p><h2 id="birthday-heading" tabindex="-1"><span data-recipient>亲爱的你</span>，<br><span data-age-words>二十岁</span><em>生日快乐。</em></h2><p class="city-blessing">借深圳的万家灯火，<br>祝你在新的故事里，自由、热烈、闪闪发光。</p></div>
-    <p class="sky-hint mono" id="sky-hint">点击夜空，让一束烟花为你升起。</p>
-    <div class="city-bottom"><div class="city-buttons"><button id="firework-button">放一束烟花 <span>✳</span></button><button id="letters-button" class="green-button">三封来自未来的信 <span>↗</span></button></div><div class="minor-actions"><button id="share">复制这份祝福</button><button id="restart">重新放映 ↻</button></div></div>
+    <div class="city-heading"><p class="recipient-caption">獻給 <strong data-recipient>親愛的你</strong><span class="mono">SHENZHEN / SPECIAL EPISODE</span></p><h2 id="birthday-heading" class="birthday-poster" tabindex="-1"><span class="episode" data-episode>第貳拾年</span><img src="assets/birthday.svg" alt="生，日、快樂。" width="800" height="490"></h2><p class="city-blessing">借深圳的萬家燈火，<br>祝你自由、熱烈、閃閃發光。</p></div>
+    <aside class="lyrics-dock" aria-label="同步歌詞"><p class="mono lyrics-label">LYRICS / 歌詞放映</p><p id="lyric-prev" class="lyric-neighbor"></p><p id="lyric-current">尚未匯入歌詞</p><p id="lyric-next" class="lyric-neighbor">在「音樂與歌詞」匯入你的歌曲。</p><span id="track-label" class="mono">YOUR SONG, YOUR STORY.</span></aside>
+    <p class="sky-hint mono" id="sky-hint">點擊夜空，讓一束煙花為你升起。</p>
+    <div class="city-bottom"><div class="city-buttons"><button id="firework-button">放一束煙花 <span>✳</span></button><button id="letters-button" class="green-button">三封來自未來的信 <span>↗</span></button></div><div class="minor-actions"><button id="share">複製這份祝福</button><button id="restart">重新放映 ↻</button></div></div>
   </section>
 </main>
-<dialog id="letters-dialog" aria-labelledby="letter-heading"><button class="dialog-close" id="close-letters" aria-label="关闭来信">关闭 ×</button><div class="letter-shell"><p class="eyebrow">LETTERS FROM YOUR FUTURE</p><nav class="letter-tabs" aria-label="选择未来来信"><button data-letter="0" aria-pressed="true">01 / 自由</button><button data-letter="1" aria-pressed="false">02 / 热爱</button><button data-letter="2" aria-pressed="false">03 / 被爱</button></nav><div class="letter-content" aria-live="polite"><p class="letter-number" id="letter-number">LETTER 01</p><h2 id="letter-heading">愿你，<br><em>自由。</em></h2><div id="letter-copy"><p>不必急着成为谁，也不必照着别人的剧本生活。</p><p>偶尔绕远，偶尔停下，都没有关系。<br>愿你有选择方向的勇气，也有享受沿途的从容。</p></div><p class="letter-sign">献给 <span data-recipient>亲爱的你</span> · <span data-age-words>二十岁</span></p></div><button id="next-letter" class="next-letter">下一封信 <span>→</span></button></div></dialog>
-<dialog id="editor-dialog" aria-labelledby="editor-heading"><button class="dialog-close" id="close-editor" aria-label="关闭制作窗口">关闭 ×</button><form id="editor-form"><p class="eyebrow">MAKE IT YOURS</p><h2 id="editor-heading">给特别的人，<br><em>一份特别篇。</em></h2><label for="recipient-input">收件人的名字</label><input id="recipient-input" name="recipient" type="text" maxlength="24" required autocomplete="off" placeholder="写下对方的名字"><label for="age-input">迎来的年龄</label><input id="age-input" name="age" type="number" min="1" max="120" value="20" required><p class="editor-note">名字只保存在专属链接的 # 片段里，由浏览器读取。<br>不会写入模板仓库，也不会发送到服务器。</p><button type="submit" class="editor-submit">生成并复制专属链接 ↗</button><div id="link-result" hidden><label for="personal-url">专属链接（也可以手动复制）</label><input id="personal-url" type="text" readonly></div></form></dialog>
-<footer><span>UNIT-01 INSPIRED / BIRTHDAY EDITION</span><details><summary>影像与创意鸣谢</summary><p>城市影像：<a href="https://commons.wikimedia.org/wiki/File:Civic_Center,_Shenzhen_Lianhuashan_Park_(2018.9)_Night.jpg" target="_blank" rel="noopener">Sparktour / Wikimedia Commons</a>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>。原图未修改，显示时叠加调色。字体 Noto Serif SC，SIL OFL 1.1。互动创意参考 <a href="https://github.com/ayusharma/birthday" target="_blank" rel="noopener">ayusharma/birthday</a> 与 <a href="https://github.com/Martarion-Code/Countdown-Birthday-and-Fireworks-Animation" target="_blank" rel="noopener">Martarion-Code 的倒数烟花项目</a>，未复制代码。</p></details></footer>
-<div id="toast" role="status" class="toast"></div><script src="app.js" defer></script>
+<dialog id="letters-dialog" aria-labelledby="letter-heading"><button class="dialog-close" id="close-letters" aria-label="關閉來信">關閉 ×</button><div class="letter-shell"><p class="eyebrow">LETTERS FROM YOUR FUTURE</p><nav class="letter-tabs" aria-label="選擇未來來信"><button data-letter="0" aria-pressed="true">01 / 自由</button><button data-letter="1" aria-pressed="false">02 / 熱愛</button><button data-letter="2" aria-pressed="false">03 / 被愛</button></nav><div class="letter-content" aria-live="polite"><p class="letter-number" id="letter-number">LETTER 01</p><h2 id="letter-heading">願你，<br><em>自由。</em></h2><div id="letter-copy"><p>不必急著成為誰，也不必照著別人的劇本生活。</p><p>偶爾繞遠，偶爾停下，都沒有關係。<br>願你有選擇方向的勇氣，也有享受沿途的從容。</p></div><p class="letter-sign">獻給 <span data-recipient>親愛的你</span> · <span data-age-words>二十歲</span></p></div><button id="next-letter" class="next-letter">下一封信 <span>→</span></button></div></dialog>
+<dialog id="editor-dialog" aria-labelledby="editor-heading"><button class="dialog-close" id="close-editor" aria-label="關閉製作窗口">關閉 ×</button><form id="editor-form"><p class="eyebrow">MAKE IT YOURS</p><h2 id="editor-heading">給特別的人，<br><em>一份特別篇。</em></h2><label for="recipient-input">收件人的名字</label><input id="recipient-input" name="recipient" type="text" maxlength="24" required autocomplete="off" placeholder="寫下對方的名字"><label for="age-input">迎來的年齡</label><input id="age-input" name="age" type="number" min="1" max="120" value="20" required><p class="editor-note">名字只保存在專屬鏈接的 # 片段裡，由瀏覽器讀取。<br>不會寫入模板倉庫，也不會發送到服務器。</p><button type="submit" class="editor-submit">生成並複製專屬鏈接 ↗</button><div id="link-result" hidden><label for="personal-url">專屬鏈接（也可以手動複製）</label><input id="personal-url" type="text" readonly></div></form></dialog>
+<dialog id="music-dialog" aria-labelledby="music-heading"><button class="dialog-close" id="close-music" aria-label="關閉音樂設定">關閉 ×</button><div class="music-shell"><p class="eyebrow">A SOUNDTRACK FOR THIS MOMENT</p><h2 id="music-heading">把這首歌，<br><em>送給你。</em></h2>
+<div class="music-layout"><section class="music-source"><h3>01 / 匯入音樂</h3><label for="audio-file">選擇音訊檔案</label><input id="audio-file" type="file" accept="audio/*,.mp3,.m4a,.wav,.ogg,.flac,.aac"><p class="field-help">支援 MP3、M4A 等瀏覽器可播放的音訊。</p><label for="music-url">或使用音訊直鏈</label><input id="music-url" type="url" placeholder="https://…/your-song.mp3"><button id="load-music-url" class="subtle-button">載入音樂直鏈 ↗</button><audio id="audio" controls preload="metadata"></audio><p id="audio-status" role="status" class="field-help">尚未匯入音樂。</p><label for="song-title">顯示的曲名（選填）</label><input id="song-title" type="text" maxlength="100" placeholder="為這一刻選的歌"><div class="media-divider"></div><h3>03 / 分享這個版本</h3><p class="field-help">本機檔案只在這個頁面試聽。匯出分享包會裝入音檔與歌詞，重新發布後，朋友打開就能載入。音訊直鏈與歌詞直鏈可以直接隨專屬連結分享。</p><button id="export-package" class="export-button">匯出含音樂的分享包 ↓</button><p id="export-status" role="status" class="field-help"></p></section>
+<section class="lyrics-source"><h3>02 / 加入歌詞</h3><label for="lyrics-file">匯入 LRC 或 TXT</label><input id="lyrics-file" type="file" accept=".lrc,.txt,text/plain"><label for="lyrics-url">或使用 LRC 歌詞直鏈</label><input id="lyrics-url" type="url" placeholder="https://…/your-song.lrc"><button id="load-lyrics-url" class="subtle-button">載入歌詞直鏈 ↗</button><label for="lyrics-text">也可以直接貼入歌詞</label><textarea id="lyrics-text" rows="7" spellcheck="false" placeholder="帶時間軸的 LRC 會自動同步。
+只有普通歌詞？每句一行，再跟著音樂逐句打點。"></textarea><button id="apply-lyrics" class="subtle-button">套用歌詞</button><p id="lyrics-status" role="status" class="field-help">尚未匯入歌詞。</p><div class="manual-sync"><h4>沒有時間軸？跟著歌曲打點。</h4><p class="field-help">先貼入每句一行的歌詞。點「從頭打點」，歌曲會從頭播放；每句開始時點一次「記錄下一句」。</p><div class="sync-actions"><button id="start-sync">從頭打點</button><button id="stamp-line" disabled>記錄下一句</button></div><p id="sync-preview" class="sync-preview">等待歌詞。</p><div class="sync-actions secondary"><button id="download-lrc">下載 LRC ↓</button><button id="end-sync">結束打點</button></div></div></section></div>
+<p class="autoplay-note">頁面打開時會嘗試播放你設定的音樂。若瀏覽器攔截自動播放，點一下「開始放映」即可；網站不會繞過瀏覽器的聲音設定。</p></div></dialog>
+<footer><span>UNIT-01 INSPIRED / BIRTHDAY EDITION</span><details><summary>影像與創意鳴謝</summary><p>城市影像：<a href="https://commons.wikimedia.org/wiki/File:Civic_Center,_Shenzhen_Lianhuashan_Park_(2018.9)_Night.jpg" target="_blank" rel="noopener">Sparktour / Wikimedia Commons</a>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>。原圖未修改，顯示時疊加調色。字體 Noto Serif TC，SIL OFL 1.1。互動創意參考 <a href="https://github.com/ayusharma/birthday" target="_blank" rel="noopener">ayusharma/birthday</a> 與 <a href="https://github.com/Martarion-Code/Countdown-Birthday-and-Fireworks-Animation" target="_blank" rel="noopener">Martarion-Code 的倒數煙花項目</a>，未複製代碼。</p></details></footer>
+<div id="toast" role="status" class="toast"></div><script src="vendor/opencc.js"></script><script src="vendor/jszip.min.js"></script><script src="lyrics.js"></script><script src="app.js?v=3" defer></script>
 </body>
 </html>
