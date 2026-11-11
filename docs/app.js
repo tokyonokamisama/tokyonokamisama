@@ -29,12 +29,14 @@ function readConfig() {
   return { name: cleanName(params.get('name')), age: Number.isInteger(n) && n >= 1 && n <= 120 ? n : 20, music: safeHttps(params.get('music')), lyrics: safeHttps(params.get('lyrics')), title: String(params.get('title') || '').slice(0, 100) };
 }
 function applyConfig(next) {
+  const changed = config.name !== next.name || config.age !== next.age;
   config = next;
   all('[data-recipient]').forEach(el => el.textContent = config.name);
   all('[data-age]').forEach(el => el.textContent = String(config.age));
   all('[data-age-words]').forEach(el => el.textContent = chineseNumber(config.age) + '歲');
   all('[data-episode]').forEach(el => el.textContent = '第' + formalNumber(config.age) + '年');
   document.title = config.name === '親愛的你' ? '生日特別篇 · UNIT-01' : config.name + '，' + config.age + '歲生日快樂';
+  if (changed && state === 'celebration' && !reducedMotion.matches) ageConstellation();
 }
 function toast(message) {
   clearTimeout(toastTimer);
@@ -84,15 +86,17 @@ $('#home').addEventListener('click', event => { event.preventDefault(); reset();
 // Short-lived local Canvas particles. Drawing stops when the particles expire.
 const canvas = $('#sky'), ctx = canvas.getContext('2d');
 let skyWidth = 0, skyHeight = 0, frame = 0, particles = [], lastTime = 0;
+let constellation = null, constellationRun = 0;
 const colors = ['#a875ed', '#b2ff3a', '#dac3ff', '#e4f6d5'];
 function resizeSky() {
   skyWidth = canvas.clientWidth || innerWidth; skyHeight = canvas.clientHeight || innerHeight;
   const dpr = Math.min(devicePixelRatio || 1, 2);
   canvas.width = skyWidth * dpr; canvas.height = skyHeight * dpr;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (constellation) ageConstellation();
 }
 function startDrawing() { if (!frame) { lastTime = 0; frame = requestAnimationFrame(draw); } }
-function stopSky() { cancelAnimationFrame(frame); frame = 0; particles = []; ctx.clearRect(0, 0, skyWidth, skyHeight); }
+function stopSky() { constellationRun++; constellation = null; document.documentElement.classList.remove('constellation-active'); cancelAnimationFrame(frame); frame = 0; particles = []; ctx.clearRect(0, 0, skyWidth, skyHeight); }
 function burst(x, y) {
   if (reducedMotion.matches || state !== 'celebration') return;
   const room = Math.max(0, 900 - particles.length);
@@ -102,17 +106,57 @@ function burst(x, y) {
   }
   startDrawing();
 }
-function ageConstellation() {
-  if (reducedMotion.matches || state !== 'celebration') return;
-  const mask = document.createElement('canvas'); mask.width = 360; mask.height = 200;
-  const pen = mask.getContext('2d'); pen.font = 'bold 164px Georgia'; pen.textAlign = 'center'; pen.textBaseline = 'middle'; pen.fillStyle = '#fff'; pen.fillText(String(config.age), 180, 105);
-  const pixels = pen.getImageData(0, 0, 360, 200).data;
-  const scale = skyWidth < 640 ? .55 : 1.05, cx = skyWidth < 640 ? skyWidth * .52 : skyWidth * .75, cy = skyHeight * .17;
-  for (let y = 0; y < 200; y += 7) for (let x = 0; x < 360; x += 7) {
-    if (pixels[(y * 360 + x) * 4 + 3] < 100 || particles.length >= 900) continue;
-    particles.push({ x: cx + (Math.random() - .5) * 400, y: cy + (Math.random() - .5) * 250, tx: cx + (x - 180) * scale, ty: cy + (y - 100) * scale, mode: 'text', life: 260, color: (x + y) % 3 ? '#a875ed' : '#b2ff3a', size: skyWidth < 640 ? 1.2 : 1.6 });
+function sampleGlyph(text, maxPoints, isName = false) {
+  const mask = document.createElement('canvas'); mask.width = 900; mask.height = 240;
+  const pen = mask.getContext('2d');
+  let size = isName ? 170 : 180;
+  const font = px => isName ? '900 ' + px + 'px RecipientMincho, Mincho, "Noto Serif CJK TC", "Songti TC", serif' : 'bold ' + px + 'px Georgia';
+  pen.font = font(size);
+  while (pen.measureText(text).width > 860 && size > 28) { size -= 4; pen.font = font(size); }
+  pen.textAlign = 'center'; pen.textBaseline = 'middle'; pen.fillStyle = '#fff'; pen.fillText(text, 450, 127);
+  const data = pen.getImageData(0, 0, 900, 240).data, points = [];
+  let left = 900, right = 0, top = 240, bottom = 0;
+  const stride = isName ? 3 : 5;
+  for (let y = 0; y < 240; y += stride) for (let x = 0; x < 900; x += stride) {
+    if (data[(y * 900 + x) * 4 + 3] < 120 || data[(y * 900 + x) * 4 + 3] === undefined) continue;
+    points.push({ x, y }); left = Math.min(left, x); right = Math.max(right, x); top = Math.min(top, y); bottom = Math.max(bottom, y);
   }
+  if (!points.length) return { points: [], aspect: 1 };
+  const width = Math.max(1, right - left), height = Math.max(1, bottom - top), count = Math.min(maxPoints, points.length);
+  return { aspect: width / height, points: Array.from({ length: count }, (_, i) => { const p = points[Math.floor(i / count * points.length)]; return { u: (p.x - left) / width, v: (p.y - top) / height }; }) };
+}
+function constellationArea() {
+  const canvasRect = canvas.getBoundingClientRect(), headerRect = $('.header').getBoundingClientRect();
+  const narrow = skyWidth < 720 && skyHeight > skyWidth * .9;
+  if (narrow) {
+    const bottom = skyHeight * .28, top = Math.min(Math.max(headerRect.bottom - canvasRect.top + 18, skyHeight * .09), bottom - 75);
+    return { x: skyWidth * .08, y: top, width: skyWidth * .84, height: Math.max(75, bottom - top), narrow };
+  }
+  const titleRect = $('.city-heading').getBoundingClientRect(), lyricsRect = $('.lyrics-dock').getBoundingClientRect();
+  const left = Math.max(skyWidth * .72, titleRect.right - canvasRect.left + 20), right = skyWidth * .965;
+  const top = Math.max(88, headerRect.bottom - canvasRect.top + 24);
+  const bottom = Math.min(skyHeight * .49, lyricsRect.top > canvasRect.top + top + 110 ? lyricsRect.top - canvasRect.top - 25 : skyHeight * .49);
+  return { x: Math.min(left, right - 120), y: top, width: Math.max(120, right - left), height: Math.max(120, bottom - top), narrow };
+}
+async function ageConstellation() {
+  const run = ++constellationRun; constellation = null;
+  if (reducedMotion.matches || state !== 'celebration') return;
+  // Sample after font loading, including browser fallback glyphs for a custom name.
+  try { if (document.fonts?.load) await Promise.all([document.fonts.load('900 170px Mincho', config.name), document.fonts.load('900 170px RecipientMincho', config.name)]); } catch { /* System CJK fonts remain usable. */ }
+  if (run !== constellationRun || reducedMotion.matches || state !== 'celebration') return;
+  document.documentElement.classList.add('constellation-active');
+  const area = constellationArea(), groups = area.narrow ? (area.height < 110 ? 3 : 4) : 5;
+  constellation = Constellation.create({ age: sampleGlyph(String(config.age), 220), name: sampleGlyph(config.name, area.narrow ? 1050 : 1500, true), area, groups, maxParticles: area.narrow ? 1050 : 1500, startedAt: performance.now(), seed: config.age });
+  if (!constellation) { document.documentElement.classList.remove('constellation-active'); return; }
   startDrawing();
+}
+function drawConstellation(time) {
+  if (!constellation) return;
+  if (!Constellation.step(constellation, time)) { constellation = null; document.documentElement.classList.remove('constellation-active'); return; }
+  for (const p of constellation.particles) {
+    if (p.alpha <= .005) continue;
+    ctx.globalAlpha = p.alpha; ctx.fillStyle = p.color; ctx.fillRect(p.x, p.y, p.size, p.size);
+  }
 }
 function draw(time) {
   const dt = lastTime ? Math.min((time - lastTime) / 16.667, 2) : 1; lastTime = time;
@@ -125,8 +169,9 @@ function draw(time) {
     ctx.globalAlpha = Math.max(0, Math.min(p.life / 35, 1)); ctx.fillStyle = p.color;
     ctx.fillRect(p.x, p.y, p.size, p.size);
   }
+  drawConstellation(time);
   ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-  frame = particles.length ? requestAnimationFrame(draw) : 0;
+  frame = particles.length || constellation ? requestAnimationFrame(draw) : 0;
 }
 canvas.addEventListener('pointerdown', event => { const r = canvas.getBoundingClientRect(); burst(event.clientX - r.left, event.clientY - r.top); });
 $('#firework-button').addEventListener('click', () => {
@@ -185,7 +230,7 @@ window.addEventListener('hashchange', () => applyConfig(readConfig()));
 
 // Real audio and lyrics are imported by the visitor. No synthesized substitute.
 const audio = $('#audio');
-let localAudioFile = null, localAudioObjectUrl = '', externalAudioUrl = '', externalLyricsUrl = '';
+let localAudioFile = null, localAudioObjectUrl = '', externalAudioUrl = '', externalLyricsUrl = '', recipientFontUrl = '';
 let rawLyrics = '', cues = [], lyricLines = [], lastCue = -999, lyricFrame = 0, lyricLoadId = 0;
 let draftCues = [], stampCursor = 0, manualSync = false, bundledMedia = false;
 function safeHttps(value) {
@@ -334,7 +379,7 @@ function shareCurrent() {
   if (localAudioFile || (rawLyrics && !externalLyricsUrl && !bundledMedia)) { toast('本機音樂或歌詞還不能隨連結分享，請先匯出分享包並發布。'); openMusic(); return; }
   copyLink(personalUrl());
 }
-const packageFiles = ['index.html', 'style.css', 'app.js', 'lyrics.js', 'assets/birthday.svg', 'assets/mincho-tc.ttf', 'assets/shenzhen.jpg', 'assets/icon.svg', 'assets/FONT-LICENSE.txt', 'vendor/opencc.js', 'vendor/OPENCC-LICENSE.txt', 'vendor/jszip.min.js', 'vendor/JSZIP-LICENSE.txt'];
+const packageFiles = ['index.html', 'style.css', 'app.js', 'lyrics.js', 'constellation.js', 'assets/birthday.svg', 'assets/mincho-tc.ttf', 'assets/shenzhen.jpg', 'assets/icon.svg', 'assets/FONT-LICENSE.txt', 'vendor/opencc.js', 'vendor/OPENCC-LICENSE.txt', 'vendor/jszip.min.js', 'vendor/JSZIP-LICENSE.txt'];
 $('#export-package').addEventListener('click', async () => {
   const button = $('#export-package');
   if (!audio.getAttribute('src')) { toast('請先匯入你要分享的音樂。'); return; }
@@ -349,7 +394,9 @@ $('#export-package').addEventListener('click', async () => {
     const musicPath = 'assets/soundtrack.' + extension; zip.file(musicPath, musicBytes);
     const lyricsPath = rawLyrics || cues.length ? 'assets/soundtrack.lrc' : '';
     if (lyricsPath) zip.file(lyricsPath, cues.length ? Lyrics.formatLrc(cues) : rawLyrics);
-    zip.file('media.json', JSON.stringify({ audio: musicPath, lyrics: lyricsPath, title: $('#song-title').value.trim() }, null, 2));
+    const mediaManifest = { audio: musicPath, lyrics: lyricsPath, title: $('#song-title').value.trim() };
+    if (recipientFontUrl) { const response = await fetch(recipientFontUrl); if (!response.ok) throw new Error('font'); zip.file('assets/recipient-mincho.ttf', await response.arrayBuffer()); mediaManifest.font = 'assets/recipient-mincho.ttf'; }
+    zip.file('media.json', JSON.stringify(mediaManifest, null, 2));
     zip.file('.nojekyll', '');
     zip.file('READ-ME.txt', '這是可直接發布的生日網站。解壓後，把整個資料夾上傳至靜態托管服務。\n音樂和歌詞已包含在 assets 中，收件人不用重新匯入。\n收件人姓名不會寫進分享包，可透過網站的「製作一份祝福」生成專屬連結。\n瀏覽器可能要求先點一下，才允許有聲播放。\n');
     const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 3 } });
@@ -365,6 +412,9 @@ async function initializeMedia() {
   if (!audio.getAttribute('src')) {
     const source = config.music || mediaPath(packaged.audio);
     if (source) { externalAudioUrl = config.music || ''; bundledMedia = !config.music && Boolean(packaged.audio); $('#music-url').value = externalAudioUrl; setAudioSource(source, config.title || String(packaged.title || '')); }
+  }
+  if (packaged.font && window.FontFace && document.fonts) {
+    try { const url = mediaPath(packaged.font); if (url) { const face = new FontFace('RecipientMincho', 'url("' + url + '")', { weight: '900' }); document.fonts.add(face); await face.load(); recipientFontUrl = url; } } catch { /* System CJK fonts remain available. */ }
   }
   const lyricsSource = config.lyrics || mediaPath(packaged.lyrics);
   if (lyricsSource && !rawLyrics) { $('#lyrics-url').value = config.lyrics || ''; loadLyricsUrl(lyricsSource); }
