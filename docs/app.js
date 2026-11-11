@@ -146,7 +146,7 @@ async function ageConstellation() {
   if (run !== constellationRun || reducedMotion.matches || state !== 'celebration') return;
   document.documentElement.classList.add('constellation-active');
   const area = constellationArea(), groups = area.narrow ? (area.height < 110 ? 3 : 4) : 5;
-  constellation = Constellation.create({ age: sampleGlyph(String(config.age), 220), name: sampleGlyph(config.name, area.narrow ? 1050 : 1500, true), area, groups, maxParticles: area.narrow ? 1050 : 1500, startedAt: performance.now(), seed: config.age });
+  constellation = Constellation.create({ age: sampleGlyph(String(config.age), 220), name: sampleGlyph(config.name, area.narrow ? 1050 : 1500, true), area, groups, maxParticles: area.narrow ? 1050 : 1500, startedAt: performance.now(), seed: config.age, loop: true, pauseMs: 900 });
   if (!constellation) { document.documentElement.classList.remove('constellation-active'); return; }
   startDrawing();
 }
@@ -180,7 +180,7 @@ $('#firework-button').addEventListener('click', () => {
   
 });
 window.addEventListener('resize', () => { if (state === 'celebration') resizeSky(); });
-reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) { stopSky(); effectTimers.forEach(clearTimeout); if (state === 'countdown') showCity(); } });
+reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) { stopSky(); effectTimers.forEach(clearTimeout); if (state === 'countdown') showCity(); } else if (state === 'celebration') ageConstellation(); });
 
 // Three handwritten wishes, revealed one at a time.
 const letters = [

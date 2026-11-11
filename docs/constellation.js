@@ -12,7 +12,7 @@
     const width = Math.min(maxWidth, maxHeight * glyph.aspect), height = width / glyph.aspect;
     return glyph.points.map(point => ({ x: center.x + (point.u - .5) * width, y: center.y + (point.v - .5) * height }));
   }
-  function create({ age, name, area, groups = 5, maxParticles = 1500, startedAt = 0, seed = 20 }) {
+  function create({ age, name, area, groups = 5, maxParticles = 1500, startedAt = 0, seed = 20, loop = false, pauseMs = 900 }) {
     if (!age.points.length || !name.points.length || area.width <= 0 || area.height <= 0) return null;
     groups = Math.max(3, Math.min(5, groups));
     const random = randomGenerator(seed), anchors = groups === 3 ? [[.22,.25],[.78,.32],[.5,.76]] : groups === 4 ? [[.23,.24],[.76,.29],[.25,.76],[.75,.75]] : [[.23,.18],[.77,.29],[.24,.65],[.77,.81],[.51,.49]];
@@ -45,10 +45,15 @@
         size: 1.1 + random() * .5, phaseOffset: random() * Math.PI * 2, x: originX, y: originY, alpha: 0
       });
     }
-    return { area, groups, particles, startedAt, formation, morphAt, settleAt, scatterAt, endAt, phase: 'numbers' };
+    return { area, groups, particles, startedAt, formation, morphAt, settleAt, scatterAt, endAt, loop, cycle: 0, cycleDuration: endAt + Math.max(0, pauseMs), phase: 'numbers' };
   }
   function step(sequence, now) {
-    const elapsed = Math.max(0, now - sequence.startedAt);
+    let elapsed = Math.max(0, now - sequence.startedAt);
+    if (sequence.loop) {
+      sequence.cycle = Math.floor(elapsed / sequence.cycleDuration);
+      elapsed %= sequence.cycleDuration;
+      if (elapsed >= sequence.endAt) { sequence.phase = 'pause'; sequence.particles.forEach(p => p.alpha = 0); return true; }
+    }
     if (elapsed >= sequence.endAt) { sequence.phase = 'complete'; sequence.particles.forEach(p => p.alpha = 0); return false; }
     sequence.phase = elapsed < sequence.morphAt ? 'numbers' : elapsed < sequence.settleAt ? 'name-forming' : elapsed < sequence.scatterAt ? 'name-hold' : 'dispersing';
     for (const p of sequence.particles) {
